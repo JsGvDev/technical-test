@@ -1,0 +1,123 @@
+@import url(https://fonts.googleapis.com/css?family=Tangerine:400,700);
+
+$padding: 5%;
+$primary-color: #EF6B43;
+
+.scrollable-content {
+    margin-top: 10px !important;
+}
+
+.vertical-space-1x {
+	margin-bottom: 10px;
+}
+
+.clearfix:after {
+	content: " "; /* Older browser do not support empty content */
+	visibility: hidden;
+	display: block;
+	height: 0;
+	clear: both;
+}
+
+.content {
+	border-left: 3px solid $primary-color;
+	border-right: 3px solid $primary-color;
+	padding-left: $padding;
+	padding-right: $padding/2;	
+}
+
+.block-controls {
+	list-style: none;
+	margin-bottom: 0;
+}
+
+.padding li {
+	padding: 0;
+}
+
+.button {
+	text-align: left;
+	font-weight: bold;
+	margin-right: 5px; 
+	width: 95%;
+	border-radius: 0px;
+	&:hover {
+        text-decoration: none;
+    }
+}
+
+.white {
+    padding-top: 1px;
+}
+
+.fa-rotate-45 {
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.arrow {
+	i.fa-caret-right {
+		color: $primary-color;
+		position: relative;
+	    top: 5px;
+	    left: 5px;	
+	}
+}
+
+.orange {
+	text-transform: uppercase;
+	background: $primary-color;
+	text-align: center;
+	color: white;
+	border-color: $primary-color;
+	letter-spacing: 0.2em;
+	margin-left: -15px !important;
+	margin-top: 20px !important;
+	width: 104% !important;
+}
+
+@media (min-width: 480px) {
+	.orange { width: 102% !important; }
+}
+
+label.amenity input[type="checkbox"] {
+/* 	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	appearance: none; */
+	
+	display:none;
+}
+label.amenity {
+	span.check {
+		position: relative;
+	    top: -2px;
+	    display: inline-block;
+	    width: 17px;
+	    height: 17px;
+	    background: #EAEBEC;
+	    vertical-align: middle;
+	    margin-right: 3px;
+	}
+	:checked + span.check {
+    	background: $primary-color;
+    }
+}
+
+.title {
+	font-family: 'Tangerine', serif;;
+  	font-size: 1.4em;
+    font-weight: 700;
+}
+
+.subtitle {
+    padding: 0 !important;
+    margin: 0 !important;
+    margin-left: -15px !important;
+    @extend .title;
+}
+
+
+    

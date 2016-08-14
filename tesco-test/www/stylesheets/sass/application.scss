@@ -1,0 +1,62 @@
+.views-container {
+	height: 100%;
+}
+.views-container.ng-leave {
+	position: absolute;
+	right: 0;
+	left: 0;
+
+	animation: slideOutLeft 0.4s;
+
+	-webkit-animation: slideOutLeft 0.4s;
+}
+.views-container.ng-enter {
+	position: absolute;
+	right: 0;
+	left: 0;
+
+	animation: slideInRight 0.4s;
+
+	-webkit-animation: slideInRight 0.4s;
+}
+
+.app-body {
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+
+	background-color: #fff;
+
+	padding: 0 !important;
+	&.no-footer {
+		padding-bottom: 0;
+	}
+}
+/* Override values for angular mobile */
+.app-body {
+	//animation for when sidebar closes
+	transition: opacity 0.4s ease-in-out;
+
+	-webkit-transition: opacity 0.4s ease-in-out;
+	-moz-transition: opacity 0.4s ease-in-out;
+	-o-transition: opacity 0.4s ease-in-out;
+}
+
+
+@import 'components';
+@import 'general';
+
+//General desktop ammends
+@media (min-width: 320px) {
+	//Remove scrollable fixedness
+	html, body {
+		height: inherit;
+
+		overflow: auto;
+	}
+	.app-body, .scrollable {
+		position: relative;
+	}
+}

@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Fitbug Login">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>INICIO</title>
+
+    <!-- Chrome - Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="196x196" href="../img/touch/chrome-touch-icon-196x196.png">
+
+    <!-- Safari - iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Fitbug Login">
+    <link rel="apple-touch-icon-precomposed" href="../img/apple-touch-icon-precomposed.png">
+
+    <!-- Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="../img/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <!-- CSS dependencies -->
+    <link href="../css/font-awesome.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="../css/application.css">
+    
+  </head>
+  <body>
+    <div id="not_authorized" style="display:none;">
+      <div class="testbox" id="loginPWD" style="display:none;">
+        <h1>Sign In</h1>
+
+        <form>
+          <hr>    
+          <label id="icon" for="user"><i class="icon-user"></i></label>
+          <input type="text" name="user" id="user" placeholder="User Name" required/>
+          <label id="icon" for="pwd"><i class="icon-shield"></i></label>
+          <input type="password" name="pwd" id="pwd" placeholder="Password" required/>
+          <div class="acceso">
+            <input type="radio" value="1" id="acceder" name="acceso" checked/>
+            <label for="acceder" class="radio">Sign In</label>
+            <input type="radio" value="0" id="remember" name="acceso" />
+            <label for="remember" class="radio">Remember</label>
+          </div> 
+          <p>Login with your user and your password. Thanks.</p>
+          <a href="#" id="login" class="col-xs-3 button">Login</a>
+        </form>
+      </div>
+
+      <div class="testbox" id="recordarPWD">
+        <h1>Forgot Password</h1>
+        <form>
+          <hr>    
+          <label id="icon" for="email"><i class="icon-envelope "></i></label>
+          <input type="text" name="email" id="email" placeholder="Email" required/>
+          <div class="acceso">
+            <input type="radio" value="1" id="acceder" name="acceso" />
+            <label for="acceder" class="radio" >Sign In</label>
+            <input type="radio" value="0" id="remember" name="acceso" checked/>
+            <label for="remember" class="radio">Remember</label>
+          </div> 
+          <p>Write your email to reset your password please.</p>
+          <a href="#" class="col-xs-3 button">Send</a>
+        </form>
+      </div>
+    </div>
+
+    <div id="activity" class="col-xs-12">
+    <h1 class="text-primary"><strong >ACTIVITY</strong></h1>
+      <div id="chartcontainer"></div>
+    </div>
+    
+    
+    <!-- libs -->
+    <!-- JS dependencies -->
+    <script src="../libs/jquery-1.10.2.min.js"></script>
+    
+    <script src="../libs/bootstrap.min.js"></script>
+    <!-- bootbox code -->
+    <script src="../libs/bootbox.min.js"></script>
+    
+    <!-- sha1 -->
+    <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/hmac-sha1.js"></script>
+    <!-- sha256 -->
+    <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/hmac-sha256.js"></script>
+    <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/components/enc-base64-min.js"></script>
+    <script src="../libs/oauth-1.0a.js"></script>
+    <script type="text/javascript" src="../libs/jscharts.js"></script>
+
+    <!-- app -->
+    <script src="../scripts/application.min.js"></script>
+  </body>
+</html>
