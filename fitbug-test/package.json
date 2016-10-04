@@ -1,0 +1,25 @@
+{
+  "name": "fitbug",
+  "version": "0.0.1",
+  "private": true,
+  "description": "For testing",
+  "main": "index.html",
+  "scripts": {
+    "build": "grunt build",
+    "watch": "grunt watch",
+    "test": "grunt connect:site1:keepalive"
+  },
+  "author": "josue.garcia",
+  "dependencies": {
+    "node-sass": "^3.3.3"
+  },
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-connect": "^0.11.2",
+    "grunt-contrib-uglify": "~0.5.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-sass": "^1.1.0-beta",
+    "json": "~9.0",
+    "plist": "~1.1"
+  }
+}

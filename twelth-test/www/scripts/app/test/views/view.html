@@ -1,0 +1,12 @@
+<div class="form-group">
+  <label for="urlInput">URL: Example: http://localhost:9000/#/intro | http://localhost:9000/angular.png</label>
+  <input type="url" ng-model="url" class="form-control" id="urlInput" placeholder="Example: http://domain.com/image.jpg">
+</div>
+<img alt="" ca-src="{{ asset.url }}" />
+<div class="form-group">
+  <button type="button" class="btn btn-info" ng-click="asset.url = url;">CHECK</button>  
+</div>
+<div class="form-group">
+  <label for="urlInput">cachedAssets: </label>
+  <pre>{{ assetService.url | json}}</pre>  
+</div>

@@ -1,0 +1,13 @@
+//General
+
+@import 'login-css';
+
+//General desktop ammends
+@media (min-width: 320px) {
+	//Remove scrollable fixedness
+	html, body {
+		height: inherit;
+
+		overflow: auto;
+	}	
+}

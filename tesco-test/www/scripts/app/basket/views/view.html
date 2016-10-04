@@ -1,0 +1,140 @@
+<!--<pre> {{ products | json }} </pre>-->
+<!--<pre> {{ values | json }} </pre>-->
+<!-- <pre> {{ cant | json }} </pre> -->
+<div class="foodity-container">
+  <div class="basket-container">
+    <div class="header-pane clearfix">
+      <img class="float-left" src="assets/images/layout/logo-tesco.png" alt="TESCO">
+
+      <div class="float-right">
+        <h1>Add recipe ingredients to your basket</h1>
+
+        <p>Grilled lamb cutlets with aubergine, sweet peppers and a mind dressing</p>
+      </div>
+    </div>
+
+    <div class="nav clearfix">
+      <h2 class="float-left">What type of products would you like?</h2>
+      <ul class="float-right">
+        <li ng-class="{'active' : (filter=='products[0].price' && !reverse)}"><a ng-click="filter='products[0].price';reverse=false" href="">Most affordable</a></li>
+        <li ng-class="{'active' : (filter=='id' && !reverse)}"><a ng-click="filter='id';reverse=false"  href="">Popular</a></li>
+        <li ng-class="{'active' : (filter=='products[0].price' && reverse)}"><a ng-click="filter='products[0].price';reverse=true" href="">Best quality</a></li>
+      </ul>
+    </div>
+
+    <div class="section-header clearfix">
+      <h3 class="float-left">You will need:</h3>
+
+      <p id="all-selector" class="float-right" data-all-selector ng-click="selectAllItems()">{{allSelected ? "Deselect all": "Select all"}}</p>
+    </div>
+
+    <ul class="products-list clearfix">
+      <li ng-repeat="item in items.primary | orderBy:filter:reverse">
+        <div class="chk"><input ng-model="values['item_' + item.id]" type="checkbox" ng-click="chooseItem(item)">
+        </div>
+        <div class="ingredient">{{item.ingredient}}</div>
+        <div class="pthumb"><img ng-src="{{item.products[0].img}}" alt='item'/></div>
+        <div class="poption">{{item.products[0].title}}</div>
+        <div class="pqty">
+          <select ng-class="{'gray-bg': values['item_' + item.id]==true}" ng-disabled="values['item_' + item.id]" ng-model="cant['item_' + item.id]" ng-change="cantItem(item)">
+            <option ng-repeat="val in [1,2,3,4,5,6,7,8,9,10]" value="{{val}}" ng-selected="val == item.qty">{{val}}</option>
+          </select>
+        </div>
+        <div class="pprice">{{item.products[0].price  | currency:"£ "}}</div>        
+        <div class="change">
+          <button class="btn" ui-turn-on="modal_list" ng-disabled="values['item_' + item.id]">Change</button>
+        </div>
+      </li>
+    </ul>
+
+    <div class="section-header clearfix">
+      <h3 class="float-left">Check you have at least:</h3>
+    </div>
+
+    <ul class="products-list clearfix">
+      <li ng-repeat="item in items.notprimary">
+        <div class="chk"><input ng-model="values['item_' + item.id]" type="checkbox" ng-click="chooseItem(item)">
+        </div>
+        <div class="ingredient">{{item.ingredient}}</div>
+        <div class="pthumb"><img ng-src="{{item.products[0].img}}" alt='item'/></div>
+        <div class="poption">{{item.products[0].title}}</div>
+        <div class="pqty">
+          <select ng-class="{'gray-bg': values['item_' + item.id]==true}" ng-disabled="values['item_' + item.id]" ng-model="cant['item_' + item.id]" ng-change="cantItem(item)">
+            <option ng-repeat="val in [1,2,3,4,5,6,7,8,9,10]" value="{{val}}" ng-selected="val == item.qty">{{val}}</option>
+          </select>
+        </div>
+        <div class="pprice">{{item.products[0].price  | currency:"£ "}}</div>        
+        <div class="change">
+          <button class="btn" ui-turn-on="modal_list" ng-disabled="values['item_' + item.id]">Change</button>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <ul class="footer-pane">
+    <li class="savings">
+      <p>Save<br/>£0.00</p>
+    </li>
+    <li class="col-xs-5">
+      <h3>Switch and Save</h3>
+
+      <p>Depending on your basket contents we'll show you if you can save money.</p>
+    </li>
+    <li class="totals clearfix">
+      <p>Total: {{basket.amount | currency:"£ "}} </p>
+      <button id="btn-add-to-basket" class="btn" ui-turn-on="login_modal">Add to basket
+      </button>
+    </li>
+  </ul>
+
+  <div ui-content-for="modals">
+    <div class="modal" ui-if="login_modal" ui-state='login_modal'>
+      <div class="modal-backdrop in"></div>
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <form enctype="application/x-www-form-urlencoded" ng-submit="loginUser(loginForm)" name="loginForm" novalidate="novalidate">
+            <div class="modal-header login">
+              <button class="close" ui-turn-off="login_modal">&times;</button>
+              <h4 class="modal-title">Add ingredients to your Tesco Basket</h4>
+            </div>
+            <div class="modal-body">
+            <p>Please enter the email address and password associated with your Tesco account. Don't have an account? Create one now at <a href="http://www.tesco.com/">Tesco.com</a></p>
+            
+              <div class="col-xs-5">
+                  <input type="email" placeholder="Email" id="inputEmail" ng-model="login.email" aria-describedby="input" name="inputEmail" validate="required" class="form-control" />
+              </div>
+              <div class="col-xs-5">
+                  <input type="password" placeholder="Password" id="inputPassword" ng-model="login.password" aria-describedby="password" name="inputPassword" validate="required" class="form-control" />
+              </div>
+              <div class="col-xs-2">
+                  <button type="submit" ui-turn-off="login_modal" ng-disabled="!login.email || !login.password || loginForm.$invalid" class="btn btn-primary">Log In</button>
+              </div>            
+            </div>
+            
+          </form>            
+        </div>
+      </div>
+    </div>
+    <div class="modal modal-overlay" ui-if='modal_list' ui-state='modal_list'>
+      <div class="scrollable">
+          <div class="scrollable-header modal-header">
+            <button class="close"
+                    ui-turn-off="modal_list">&times;</button>
+            <h4 class="modal-title">List the items</h4>
+          </div>
+          <div class="modal-body scrollable-content">
+            <div class="list-group">
+              <a ui-turn-off="modal_list" class="list-group-item" ng-repeat="item in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25]">
+                ITEM {{$index}} <i class="fa fa-chevron-right pull-right"></i>
+              </a>
+            </div>
+          </div>
+          <div class="scrollable-footer modal-footer">
+            <button ui-turn-off="modal_list" class="btn btn-default">Close</button>
+            <button ui-turn-off="modal_list" class="btn btn-primary">Save changes</button>
+          </div>          
+      </div>
+    </div>
+  </div>  
+</div>
+

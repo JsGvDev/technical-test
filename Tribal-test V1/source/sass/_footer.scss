@@ -1,0 +1,35 @@
+@import 'vars';
+
+.footer {
+    width: 100%;
+    padding: 20px 25px;
+    position: fixed;
+    bottom: 0;
+
+    .option {
+        display: inline-block;
+        width: 20%;
+        height: 55px;
+        color: $body-bg;
+        background: $menu-bg;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    span {
+        position: relative;
+        top: 25%;
+        opacity: 0.4;
+        font-size: small
+    }
+    .selected {
+        border-bottom: $selected solid 5px;
+        span {
+            opacity: 1;
+        }
+    }
+
+    @media( max-width: 870px ) {
+        position: relative;
+    }
+}

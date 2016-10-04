@@ -1,0 +1,328 @@
+/* 
+//  Colors
+/////////////////////////////////////////////////////////////////////////////	
+*/
+/* 
+//  Misc variables
+/////////////////////////////////////////////////////////////////////////////	
+*/
+/* 
+//  Type
+/////////////////////////////////////////////////////////////////////////////	
+*/
+html {
+  height: 100%;
+}
+body {
+  background-color: #ffffff;
+  color: #294284;
+  font-family: Arial, sans-serif;
+  height: 100%;
+}
+h1 {
+  font-size: 19px;
+  line-height: 21px;
+  margin: 0 0 3px;
+}
+h2 {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 16px;
+  margin: 14px 0 0 13px;
+}
+h3 {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 16px;
+  margin: 9px 0 11px 13px;
+}
+p {
+  color: #2e2e2e;
+  font-size: 13px;
+  line-height: 15px;
+}
+ul {
+  display: block;
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0;
+}
+a {
+  cursor: pointer;
+}
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+  text-align: right;
+}
+/* 
+// FOODITY
+/////////////////////////////////////////////////////////////////////////////	
+*/
+.foodity-container {
+  background-color: #ffffff;
+  height: 100%;
+  min-width: 768px;
+  width: 100%;
+  z-index: 1000;
+}
+.basket-container {
+  margin: 0;
+  padding: 35px 18px 100px;
+}
+.basket-container .header-pane img {
+  font-size: 18px;
+  line-height: 35px;
+  margin-top: 5px;
+}
+.basket-container .header-pane p {
+  font-size: 13px;
+  line-height: 15px;
+}
+.basket-container .nav {
+  background-color: #294284;
+  border-radius: 5px 5px 0 0;
+  margin: 10px 0 0;
+}
+.basket-container .nav ul li {
+  display: inline;
+}
+.basket-container .nav ul li a {
+  border-right: 2px solid #294284;
+  border-left: 2px solid #294284;
+  color: #ffffff;
+  float: left;
+  font-size: 12px;
+  line-height: 12px;
+  font-weight: bold;
+  padding: 15px 13px 18px;
+  text-decoration: none;
+}
+.basket-container .nav ul li.active a {
+  border-color: #3859ae;
+  background: #3859ae;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #3859ae), color-stop(1, #294284));
+  background: -ms-linear-gradient(bottom, #3859ae, #294284);
+  background: -moz-linear-gradient(center bottom, #3859ae 0%, #294284 100%);
+  background: -o-linear-gradient(#294284, #3859ae);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#294284', endColorstr='#3859ae', GradientType=0);
+}
+.basket-container .nav ul li:first-child a {
+  border-left: 0;
+}
+.basket-container .nav ul li:last-child a {
+  border-right: 0;
+}
+.basket-container .section-header {
+  background-color: #f2f2f2;
+  border-right: 1px solid #f2f2f2;
+  border-bottom: 1px solid #f2f2f2;
+  border-left: 1px solid #f2f2f2;
+  border-radius: 0 0 2px 2px;
+  height: 35px;
+}
+.basket-container .section-header #all-selector {
+  color: #294284;
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 15px;
+  margin: 8px 13px 10px;
+}
+.basket-container .section-header #all-selector:hover,
+.basket-container .section-header #all-selector:focus,
+.basket-container .section-header #all-selector:active {
+  text-decoration: underline;
+}
+.basket-container .products-list {
+  display: table;
+  margin: 10px 0;
+  width: 100%;
+}
+.basket-container .products-list li {
+  display: table-row;
+  overflow: auto;
+}
+.basket-container .products-list li > div {
+  border-bottom: 1px solid #f2f2f2;
+  display: table-cell;
+  opacity: 1;
+  padding: 10px 0;
+  vertical-align: middle;
+}
+.basket-container .products-list li .inactive {
+  opacity: 0.5;
+}
+.basket-container .products-list li .chk {
+  font-size: 14px;
+  line-height: 16px;
+  width: 40px;
+  text-align: center;
+}
+.basket-container .products-list li .ingredient {
+  color: #2e2e2e;
+  font-size: 14px;
+  line-height: 16px;
+  width: 25%;
+  min-width: 190px;
+  padding-right: 23px;
+}
+.basket-container .products-list li .pthumb {
+  width: 68px;
+}
+.basket-container .products-list li .poption {
+  color: #3859ae;
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 15px;
+  min-width: 263px;
+  padding-left: 18px;
+}
+.basket-container .products-list li .pqty {
+  font-size: 16px;
+  width: 50px;
+  text-align: center;
+}
+.basket-container .products-list li .pprice {
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 22px;
+  text-align: center;
+  min-width: 94px;
+}
+.basket-container .products-list li .change {
+  padding-left: 0;
+  padding-right: 0;
+  position: relative;
+  vertical-align: bottom;
+  width: 27px;
+}
+.basket-container .products-list li .change button {
+  background-color: #3859ae;
+  border-radius: 2px;
+  color: #ffffff;
+  display: block;
+  font-size: 11px;
+  line-height: 11px;
+  font-weight: bold;
+  padding: 6px 11px 8px;
+  position: absolute;
+  -ms-transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  -ms-transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+  transform-origin: 0 0;
+  white-space: nowrap;
+}
+.basket-container .products-list li:after {
+  content: "";
+  clear: left;
+  float: left;
+  display: block;
+  width: 100%;
+  height: 20px;
+}
+.footer-pane {
+  background-color: #eeeef2;
+  border-top: 1px solid #d0d0d2;
+  border-bottom: 1px solid #d0d0d2;
+  height: 100px;
+  margin: 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.footer-pane li {
+  float: left;
+}
+.footer-pane h3 {
+  font-size: 21px;
+  font-weight: bold;
+  line-height: 24px;
+  margin: 23px 0 0;
+}
+.footer-pane p {
+  font-size: 14px;
+  line-height: 16px;
+  margin: 0;
+}
+.footer-pane .savings {
+  background-color: #fa0807;
+  border-radius: 50px;
+  height: 62px;
+  margin: 15px 13px 0 32px;
+  width: 62px;
+}
+.footer-pane .savings p {
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 19px;
+  text-align: center;
+  margin-top: 10px;
+}
+.footer-pane .totals {
+  float: right;
+  margin: 20px 32px 0 32px;
+}
+.footer-pane .totals p {
+  color: #294284;
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: bold;
+  text-align: right;
+  margin: 0 0 6px;
+}
+.footer-pane .totals button.btn {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 16px;
+  background: #294284;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #294284), color-stop(1, #3859ae));
+  background: -ms-linear-gradient(bottom, #294284, #3859ae);
+  background: -moz-linear-gradient(center bottom, #294284 0%, #3859ae 100%);
+  background: -o-linear-gradient(#3859ae, #294284);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3859ae', endColorstr='#294284', GradientType=0);
+}
+.footer-pane .totals button.btn:hover,
+.footer-pane .totals button.btn:focus,
+.footer-pane .totals button.btn:active {
+  color: #ffffff;
+}
+.basket-overlay {
+  background: rgba(255, 255, 255, 0.7);
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100500;
+}
+.basket-overlay .modal-login {
+  background-color: #f2f2f2;
+  border: 1px solid #d0d0d2;
+  height: 172px;
+  left: 50%;
+  margin-top: -86px;
+  margin-left: -213px;
+  opacity: 1;
+  position: absolute;
+  top: 50%;
+  width: 426px;
+}
+.basket-overlay .modal-login .close {
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: bold;
+  float: right;
+}
+.basket-overlay .modal-login .close a {
+  display: block;
+}
+/* 
+// NO JAVASCRIPT (sad, but true)
+/////////////////////////////////////////////////////////////////////////////	
+*/

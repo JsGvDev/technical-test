@@ -1,0 +1,5 @@
+$text: #fff;
+$body-bg: #ececec;
+$menu-bg: #222;
+$menu-text: #292929;
+$selected: #00aeef;
